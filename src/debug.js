@@ -34,10 +34,11 @@ const fixVariables = (temp) => {
 // It should NOT mutate the original array
 
 const doubleAllItemsPurely = (arr) => {
+  const newArr = []
   for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i] * 2;
+    newArr.push(arr[i] * 2)
   }
-  return arr;
+  return newArr;
 };
 
 // ============================================
@@ -62,3 +63,5 @@ module.exports = {
   doubleAllItemsPurely,
   sumArray,
 };
+
+

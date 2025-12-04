@@ -14,7 +14,7 @@
 // ============================================
 
 const petJudger = (petBreed, petName) => {
-  if (petBreed === undefined && petName === undefined) {
+  if (petBreed === undefined || petName === undefined) {
     console.log(`Missing information. Please provide a valid pet.`)
   } else if  (petBreed === 'dog') {
     console.log(`I love dogs! ${petName} is so cute!`)
@@ -68,13 +68,14 @@ const letterCaseCounts = (str) => {
     let letter = str[i]
 
     if (letter === letter.toLowerCase() && letter !== letter.toUpperCase()){
-      console.log(lowercase)
+      lowercase ++
     } else if (letter === letter.toUpperCase() && letter !== letter.toLowerCase()){
-      console.log(uppercase)
+      uppercase ++
     } else {
-      console.log(neither)
+      neither ++
     }
   }
+  return {lowercase, uppercase, neither}
 };
 
 // ============================================
@@ -82,7 +83,16 @@ const letterCaseCounts = (str) => {
 // ============================================
 
 const getNamesOfGreedyGnomes = (gnomes) => {
-  
+  const greedyGnomes = []
+
+  for (let i = 0; i < gnomes.length; i++) {
+    const gnome = gnomes[i]
+
+    if (gnome.stolenDecorations.length > 1) {
+      greedyGnomes.push(gnome.name)
+    }
+  }
+    return greedyGnomes
   
   // Your code here
 };
